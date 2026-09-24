@@ -20,6 +20,7 @@
         <a class="brand" href="#library" aria-label="我的小卡册首页"><span class="brand-mark">C</span><span>我的小卡册</span></a>
         <nav class="nav" aria-label="主导航">
           <button class="nav-link active" data-view="library">我的卡册</button>
+          <button class="nav-link" data-view="wish">想要</button>
           <button class="nav-link" data-view="looks">造型</button>
           <button class="nav-link" data-view="grid">四宫格</button>
         </nav>
@@ -46,6 +47,12 @@
           <div id="selectionBar" class="selection-bar hidden"><span id="selectionText">已选 0 / 4</span><button class="quiet" id="clearSelection">清空</button><button class="primary" id="openGrid">开始试摆 →</button></div>
           <div id="cardGrid" class="card-grid"></div>
           <div id="emptyLibrary" class="empty-state"><div class="empty-card">♡</div><h2>第一张小卡，先放在这里</h2><p>添加图片和几项基本信息，就能开始整理。</p><button class="primary add-card">添加第一张小卡</button></div>
+        </section>
+
+        <section id="wish" class="view">
+          <div class="page-heading"><div><p class="eyebrow">WISH LIST</p><h1>想要的，先收在这里</h1><p class="subcopy">这里会自动汇总状态为“想收”的小卡。</p></div><button class="primary add-wish">＋ 添加想要</button></div>
+          <div id="wishGrid" class="card-grid"></div>
+          <div id="emptyWish" class="empty-state"><div class="empty-card">♡</div><h2>还没有想要的小卡</h2><p>先记下来，等合适的时候再下单。</p><button class="primary add-wish">添加想要的小卡</button></div>
         </section>
 
         <section id="looks" class="view">
