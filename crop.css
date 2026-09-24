@@ -2,7 +2,7 @@
 .crop-dialog h2 { margin: 0; font-family: "Playfair Display", "Noto Sans SC", serif; }
 .crop-head { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .9rem; }
 .crop-head p:not(.eyebrow) { color: #687386; font-size: .82rem; margin: .35rem 0 0; }
-#cropCanvas { display: block; width: min(100%, 390px); max-height: 54vh; height: auto; margin: 0 auto; background: #14223c; touch-action: none; }
+#cropCanvas { display: block; width: min(74vw, 390px); aspect-ratio: 5 / 7; height: auto; margin: 0 auto; background: #14223c; touch-action: none; }
 .zoom-control { display: flex; align-items: center; gap: .8rem; max-width: 390px; margin: 1rem auto; color: #687386; font-size: .82rem; }
 .zoom-control input { padding: 0; border: 0; accent-color: #183e70; }
 .crop-actions { display: flex; justify-content: flex-end; gap: .6rem; border-top: 1px solid #dce2e9; padding-top: 1rem; }
