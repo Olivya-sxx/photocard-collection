@@ -17,7 +17,10 @@
 }
 
 .form-extra input { margin-top: .28rem; }
+.small-action { margin-left: auto; border: 0; border-bottom: 1px solid #183e70; background: transparent; color: #183e70; padding: .15rem 0; font-size: .76rem; cursor: pointer; }
 
 @media (max-width: 760px) {
   .form-extra { margin-left: 0; }
+  .look-heading { align-items: center; flex-wrap: wrap; }
+  .small-action { width: 100%; margin-left: 0; text-align: left; }
 }
