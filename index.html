@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#112340" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="我的小卡册" />
+    <title>我的小卡册</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mobile.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#library" aria-label="我的小卡册首页"><span class="brand-mark">C</span><span>我的小卡册</span></a>
+        <nav class="nav" aria-label="主导航">
+          <button class="nav-link active" data-view="library">我的卡册</button>
+          <button class="nav-link" data-view="looks">造型</button>
+          <button class="nav-link" data-view="grid">四宫格</button>
+        </nav>
+        <button class="primary add-card">＋ 添加小卡</button>
+      </header>
+
+      <main>
+        <section id="library" class="view active">
+          <div class="hero">
+            <div><p class="eyebrow">PERSONAL COLLECTION</p><h1>今天想翻哪一张？</h1><p class="hero-copy">给每一张喜欢的小卡留一个清楚的位置。</p></div>
+            <div class="collection-count"><strong id="cardCount">0</strong><span>张不同小卡</span></div>
+          </div>
+          <section class="toolbox" aria-label="卡册筛选">
+            <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索卡名、成员、专辑或来源" /></label>
+            <div class="filters">
+              <select id="statusFilter"><option value="">所有状态</option><option>想收</option><option>在途</option><option>已到手</option></select>
+              <select id="memberFilter"><option value="">所有成员</option></select>
+              <select id="albumFilter"><option value="">所有专辑 / 系列</option></select>
+              <select id="sourceFilter"><option value="">所有来源</option></select>
+              <select id="likeFilter"><option value="">所有喜欢程度</option><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select>
+              <select id="sortSelect"><option value="newest">最新加入</option><option value="like">最喜欢</option><option value="market">市场价高到低</option><option value="name">卡名 A–Z</option></select>
+            </div>
+          </section>
+          <div id="selectionBar" class="selection-bar hidden"><span id="selectionText">已选 0 / 4</span><button class="quiet" id="clearSelection">清空</button><button class="primary" id="openGrid">开始试摆 →</button></div>
+          <div id="cardGrid" class="card-grid"></div>
+          <div id="emptyLibrary" class="empty-state"><div class="empty-card">♡</div><h2>第一张小卡，先放在这里</h2><p>添加图片和几项基本信息，就能开始整理。</p><button class="primary add-card">添加第一张小卡</button></div>
+        </section>
+
+        <section id="looks" class="view">
+          <div class="page-heading"><div><p class="eyebrow">LOOK BOOK</p><h1>同一套衣服，放在一起看</h1></div><button class="primary add-card">＋ 添加小卡</button></div>
+          <div id="looksList" class="looks-list"></div>
+          <div id="emptyLooks" class="empty-state"><div class="empty-card">✦</div><h2>还没有造型分组</h2><p>给小卡填写“套装 / 造型分组”，它们会自动出现在这里。</p></div>
+        </section>
+
+        <section id="grid" class="view">
+          <div class="page-heading"><div><p class="eyebrow">FOUR CUTS</p><h1>四宫格试摆</h1><p class="subcopy">从卡册选 4 张，点箭头调整顺序；也可以在这里换卡。</p></div></div>
+          <div class="grid-workspace">
+            <div class="four-grid" id="fourGrid"></div>
+            <aside class="grid-side"><label>这个组合叫什么？<input id="layoutName" maxlength="32" placeholder="例如：蓝制服最爱四张" /></label><button id="saveLayout" class="primary wide">保存这个组合</button><p class="side-note">保存后会留在这个浏览器里。</p></aside>
+          </div>
+          <section class="replace-panel"><div class="replace-title"><h2>换一张</h2><span>点选后替换当前高亮的位置</span></div><div id="replaceCards" class="replace-cards"></div></section>
+          <section class="saved-section"><h2>已保存的组合</h2><div id="savedLayouts" class="saved-layouts"></div></section>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="cardDialog"><form id="cardForm" method="dialog"><div class="dialog-head"><div><p class="eyebrow" id="dialogEyebrow">NEW CARD</p><h2 id="dialogTitle">添加小卡</h2></div><button type="button" class="icon-button" id="closeDialog" aria-label="关闭">×</button></div><input type="hidden" id="cardId" />
+      <div class="form-layout"><div class="image-upload"><label class="image-drop" id="imageDrop"><input id="imageInput" type="file" accept="image/*" /><span id="uploadLabel">＋<small>添加图片</small></span><img id="imagePreview" alt="小卡预览" /></label><button type="button" id="removeImage" class="text-button hidden">移除图片</button></div>
+        <div class="form-fields"><label>卡片名称 *<input id="nameInput" required maxlength="80" placeholder="例如：韩志薰｜蓝制服 Weverse A" /></label><div class="two-cols"><label>成员 *<input id="memberInput" required maxlength="40" /></label><label>专辑 / 系列<input id="albumInput" maxlength="60" /></label></div><div class="two-cols"><label>来源<input id="sourceInput" maxlength="40" placeholder="专辑卡 / 店铺特典…" /></label><label>来源详情<input id="sourceDetailInput" maxlength="80" placeholder="例如：Weverse 特典" /></label></div><div class="two-cols"><label>市场价（元）<input id="marketPriceInput" type="number" min="0" step="0.01" /></label><label>入手价（元）<input id="purchasePriceInput" type="number" min="0" step="0.01" /></label></div><div class="two-cols"><label>状态<select id="statusInput"><option>已到手</option><option>在途</option><option>想收</option></select></label><label>拥有数量<input id="quantityInput" type="number" value="1" min="0" step="1" /></label></div><div class="two-cols"><label>喜欢程度<select id="likeInput"><option value="5">★★★★★</option><option value="4">★★★★</option><option value="3">★★★</option><option value="2">★★</option><option value="1">★</option></select></label><label>套装 / 造型分组<input id="lookInput" maxlength="50" placeholder="例如：蓝制服" /></label></div><label>备注<textarea id="noteInput" rows="3" maxlength="300" placeholder="可选"></textarea></label></div></div>
+      <div class="dialog-actions"><button type="button" id="deleteCard" class="danger hidden">删除小卡</button><span></span><button type="button" class="quiet" id="cancelDialog">取消</button><button class="primary" id="saveCard" value="default">保存小卡</button></div></form></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+@media (max-width: 760px) {
+  .topbar { gap: .45rem; }
+  .brand { font-size: .9rem; gap: .45rem; }
+  .brand-mark { width: 27px; height: 27px; }
+  .nav { gap: .1rem; }
+  .nav-link { padding: .4rem .28rem; font-size: .78rem; white-space: nowrap; }
+}
