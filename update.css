@@ -1,0 +1,23 @@
+.backup-button {
+  margin-top: 1rem;
+  border: 0;
+  border-bottom: 1px solid #183e70;
+  background: transparent;
+  color: #183e70;
+  padding: .2rem 0;
+  cursor: pointer;
+  font: 500 .82rem "Noto Sans SC", sans-serif;
+}
+
+.form-extra {
+  display: block;
+  margin: 0 0 1rem 196px;
+  color: #687386;
+  font-size: .8rem;
+}
+
+.form-extra input { margin-top: .28rem; }
+
+@media (max-width: 760px) {
+  .form-extra { margin-left: 0; }
+}
