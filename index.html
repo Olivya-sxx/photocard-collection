@@ -21,6 +21,7 @@
         <a class="brand" href="#library" aria-label="我的小卡册首页"><span class="brand-mark">C</span><span>我的小卡册</span></a>
         <nav class="nav" aria-label="主导航">
           <button class="nav-link active" data-view="library">我的卡册</button>
+          <button class="nav-link" data-view="table">表格</button>
           <button class="nav-link" data-view="wish">想要</button>
           <button class="nav-link" data-view="looks">造型</button>
           <button class="nav-link" data-view="grid">四宫格</button>
@@ -48,6 +49,12 @@
           <div id="selectionBar" class="selection-bar hidden"><span id="selectionText">已选 0 / 4</span><button class="quiet" id="clearSelection">清空</button><button class="primary" id="openGrid">开始试摆 →</button></div>
           <div id="cardGrid" class="card-grid"></div>
           <div id="emptyLibrary" class="empty-state"><div class="empty-card">♡</div><h2>第一张小卡，先放在这里</h2><p>添加图片和几项基本信息，就能开始整理。</p><button class="primary add-card">添加第一张小卡</button></div>
+        </section>
+
+        <section id="table" class="view">
+          <div class="page-heading"><div><p class="eyebrow">COLLECTION TABLE</p><h1>所有小卡，一眼看清</h1><p class="subcopy">左右滑动可以查看完整信息。</p></div></div>
+          <div class="table-wrap"><table class="collection-table"><thead><tr><th>照片</th><th>卡片名称</th><th>成员</th><th>专辑 / 系列</th><th>来源</th><th>状态</th><th>喜欢</th><th>数量</th><th>市场价</th><th>入手价</th><th>下单日期</th><th>造型</th><th></th></tr></thead><tbody id="tableBody"></tbody></table></div>
+          <div id="emptyTable" class="empty-state"><div class="empty-card">☷</div><h2>表格会跟着卡册一起更新</h2><p>添加第一张小卡后，就能在这里总览。</p></div>
         </section>
 
         <section id="wish" class="view">
