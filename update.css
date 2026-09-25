@@ -35,4 +35,8 @@
   .form-extra { margin-left: 0; }
   .look-heading { align-items: center; flex-wrap: wrap; }
   .small-action { width: 100%; margin-left: 0; text-align: left; }
+  .collection-stats { display: block; }
+  .collection-stats .collection-count { display: none; }
+  .collection-stats .spend-count { display: grid; margin: 1.2rem 0 0; border-left: 0; border-top: 1px solid #14223c; padding: .7rem 0 0; }
+  .spend-count strong { font-size: 2.2rem; }
 }
