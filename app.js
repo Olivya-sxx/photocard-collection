@@ -63,7 +63,7 @@ function setupMemberSelect(){const input=$('memberInput'),select=document.create
 setupMemberSelect();load(); render();
 $('accountButton').onclick=()=>$('accountDialog').showModal();
 $('closeAccountDialog').onclick=()=>$('accountDialog').close();
-$('sendLoginLink').onclick=async()=>{const email=$('emailInput').value.trim();if(!email||!$('emailInput').checkValidity()){toast('请填写正确的邮箱');return;}const {error}=await cloud.client.auth.signInWithOtp({email,options:{emailRedirectTo:`${location.origin}${location.pathname}`}});if(error){toast('登录链接暂时无法发送');console.error(error);return;}toast('登录链接已发到邮箱');};
+$('sendLoginLink').onclick=async()=>{const email=$('emailInput').value.trim();if(!email||!$('emailInput').checkValidity()){toast('请填写正确的邮箱');return;}const {error}=await cloud.client.auth.signInWithOtp({email,options:{emailRedirectTo:`${location.origin}${location.pathname}?v=14`}});if(error){toast('登录链接暂时无法发送');console.error(error);return;}toast('登录链接已发到邮箱');};
 $('migrateLocal').onclick=migrateLocal;
 $('signOut').onclick=async()=>{await cloud.client.auth.signOut();$('accountDialog').close();toast('已退出登录');};
 initCloud();
