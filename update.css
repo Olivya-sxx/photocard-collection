@@ -9,6 +9,15 @@
   font: 500 .82rem "Noto Sans SC", sans-serif;
 }
 .backup-link { margin-left: .7rem; border: 0; background: transparent; color: #687386; padding: .2rem 0; cursor: pointer; font-size: .76rem; }
+.top-actions { display: flex; align-items: center; gap: .55rem; }
+.account-button { border: 1px solid #b7c4d3; background: #fff; color: #183e70; padding: .62rem .75rem; border-radius: 5px; font: 600 .78rem "Noto Sans SC", sans-serif; cursor: pointer; }
+.account-button.connected { border-color: #183e70; background: #e9f3ff; }
+.account-dialog { width: min(430px, calc(100vw - 2rem)); border: 0; border-radius: 14px; padding: 1.4rem; color: #14223c; box-shadow: 0 20px 60px rgba(20,34,60,.28); }
+.account-dialog::backdrop { background: rgba(20,34,60,.38); }
+.account-dialog p { line-height: 1.7; color: #687386; }
+.account-dialog label { display: grid; gap: .42rem; margin: 1rem 0; color: #14223c; font-size: .84rem; }
+.account-dialog input { border: 1px solid #cbd5df; border-radius: 5px; padding: .72rem; font: inherit; }
+.account-dialog .wide { width: 100%; margin-top: .7rem; }
 
 .form-extra {
   display: block;
@@ -39,4 +48,6 @@
   .collection-stats .collection-count { display: none; }
   .collection-stats .spend-count { display: grid; margin: 1.2rem 0 0; border-left: 0; border-top: 1px solid #14223c; padding: .7rem 0 0; }
   .spend-count strong { font-size: 2.2rem; }
+  .top-actions { gap: .3rem; }
+  .account-button { padding: .5rem; font-size: .72rem; }
 }
