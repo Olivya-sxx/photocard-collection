@@ -33,9 +33,9 @@
         <section id="library" class="view active">
           <div class="hero">
             <div><p class="eyebrow">PERSONAL COLLECTION</p><h1>今天想翻哪一张？</h1><p class="hero-copy">给每一张喜欢的小卡留一个清楚的位置。</p><button id="exportTable" class="backup-button">↓ 导出表格</button><button id="exportBackup" class="backup-link">完整备份</button></div>
-            <div class="collection-count"><strong id="cardCount">0</strong><span>张不同小卡</span></div>
+            <div class="collection-stats"><div class="collection-count"><strong id="cardCount">0</strong><span>张不同小卡</span></div><div class="collection-count spend-count"><strong id="totalSpend">¥0</strong><span>总消费</span></div></div>
           </div>
-          <section class="toolbox" aria-label="卡册筛选">
+          <p class="spend-note">总消费按入手价 × 拥有数量计算；想收的小卡不计入。</p><section class="toolbox" aria-label="卡册筛选">
             <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索卡名、成员、专辑或来源" /></label>
             <div class="filters">
               <select id="statusFilter"><option value="">所有状态</option><option>想收</option><option>在途</option><option>已到手</option></select>

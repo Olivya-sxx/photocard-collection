@@ -27,6 +27,9 @@
 .collection-table tr:last-child td { border-bottom: 0; }
 .table-image { display: block; width: 34px; height: 47px; object-fit: cover; border-radius: 3px; background: #e9f3ff; }
 .table-edit { border: 0; border-bottom: 1px solid #183e70; background: transparent; color: #183e70; padding: .1rem 0; cursor: pointer; font-size: .76rem; }
+.collection-stats { display: flex; gap: 2rem; }
+.spend-count strong { color: #fb765b; }
+.spend-note { margin: 0 0 -1px; padding: .65rem 0; border-top: 1px solid #dce2e9; color: #687386; font-size: .76rem; }
 
 @media (max-width: 760px) {
   .form-extra { margin-left: 0; }
