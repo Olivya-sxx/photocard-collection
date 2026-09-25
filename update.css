@@ -8,6 +8,7 @@
   cursor: pointer;
   font: 500 .82rem "Noto Sans SC", sans-serif;
 }
+.backup-link { margin-left: .7rem; border: 0; background: transparent; color: #687386; padding: .2rem 0; cursor: pointer; font-size: .76rem; }
 
 .form-extra {
   display: block;
